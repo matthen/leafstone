@@ -1,0 +1,35 @@
+{
+  "name": "leafstone-react",
+  "version": "1.0.0",
+  "description": "A development server for quickly prototyping and testing React components",
+  "main": "lib/index.js",
+  "bin": {
+    "leafstone": "bin/leafstone.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "templates/"
+  ],
+  "scripts": {
+    "dev": "vite --config dev-server/vite.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["react", "development", "components", "prototyping", "jsx"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@vitejs/plugin-react-swc": "^4.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "vite": "^7.1.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
