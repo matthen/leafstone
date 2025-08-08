@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import '../styles.css';
 
 // Create root once
 const root = createRoot(document.getElementById('root'));
@@ -11,36 +12,28 @@ async function loadComponent() {
   if (!componentName) {
     try {
       const response = await fetch('/api/components');
-      const { components } = await response.json();
+      const { components, directory } = await response.json();
       
       const componentItems = components.map(name => 
-        React.createElement('li', { key: name, style: { margin: '10px 0' } },
+        React.createElement('li', { key: name, className: 'mb-3' },
           React.createElement('a', { 
             href: `#${name}`, 
-            style: { 
-              display: 'block',
-              padding: '10px 15px',
-              backgroundColor: '#f0f0f0',
-              textDecoration: 'none',
-              borderRadius: '5px',
-              color: '#333',
-              border: '1px solid #ddd'
-            }
+            className: 'block p-4 bg-gray-800 hover:bg-gray-700 text-gray-100 no-underline rounded-lg border border-gray-600 transition-colors duration-200'
           }, `📦 ${name}`)
         )
       );
 
-      const componentList = React.createElement('div', { style: { padding: '20px', fontFamily: 'Arial, sans-serif' } },
-        React.createElement('h1', {}, 'Leafstone React Component Viewer'),
-        React.createElement('p', {}, `Found ${components.length} component${components.length !== 1 ? 's' : ''} in your directory:`),
-        React.createElement('ul', { style: { listStyle: 'none', padding: 0 } }, ...componentItems)
+      const componentList = React.createElement('div', { className: 'p-6 font-sans max-w-4xl mx-auto' },
+        React.createElement('h1', { className: 'text-3xl font-bold text-white mb-2' }, 'Leafstone React Component Viewer'),
+        React.createElement('p', { className: 'text-gray-400 mb-6' }, `Found ${components.length} component${components.length !== 1 ? 's' : ''} in ${directory}:`),
+        React.createElement('ul', { className: 'list-none p-0' }, ...componentItems)
       );
       
       root.render(componentList);
     } catch (error) {
-      root.render(React.createElement('div', { style: { padding: '20px' } },
-        React.createElement('h1', {}, 'Error loading components'),
-        React.createElement('p', {}, 'Could not fetch component list from server')
+      root.render(React.createElement('div', { className: 'p-6 max-w-4xl mx-auto' },
+        React.createElement('h1', { className: 'text-2xl font-bold text-red-400 mb-2' }, 'Error loading components'),
+        React.createElement('p', { className: 'text-gray-400' }, 'Could not fetch component list from server')
       ));
     }
     return;
@@ -52,10 +45,10 @@ async function loadComponent() {
     
     root.render(React.createElement(Component));
   } catch (error) {
-    root.render(React.createElement('div', {}, 
-      React.createElement('h1', {}, `Component "${componentName}" not found`),
-      React.createElement('p', {}, 'Available components in your directory'),
-      React.createElement('a', { href: '#' }, 'Back to component list')
+    root.render(React.createElement('div', { className: 'p-6 max-w-4xl mx-auto' }, 
+      React.createElement('h1', { className: 'text-2xl font-bold text-red-400 mb-2' }, `Component "${componentName}" not found`),
+      React.createElement('p', { className: 'text-gray-400 mb-4' }, 'Available components in your directory'),
+      React.createElement('a', { href: '#', className: 'text-purple-400 hover:text-pink-400 underline' }, 'Back to component list')
     ));
   }
 }
