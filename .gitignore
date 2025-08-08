@@ -89,6 +89,8 @@ temp/
 dist/
 .vite/
 .vite-entries/
+
+# Leafstone temporary files
 .leafstone-temp/
 
 # Build outputs
