@@ -123,6 +123,43 @@ function MyChart() {
 - `// @requires d3@^7.0.0` - Popular data visualization library
 - `// @requires framer-motion@^10.0.0` - Animation library
 
+### Assets and Media Files
+
+Need to use images, SVGs, or other static assets in your components? Use the `@requires-asset` syntax to include them:
+
+```jsx
+// @requires-asset ./logo.svg
+// @requires-asset ./background.png
+// @requires-asset ../shared/icon.svg
+import { useState } from 'react';
+
+function MyComponent() {
+  return (
+    <div>
+      <img src="/assets/logo.svg" alt="Logo" />
+      <div style={{ backgroundImage: 'url(/assets/background.png)' }}>
+        <img src="/assets/icon.svg" alt="Icon" />
+      </div>
+    </div>
+  );
+}
+
+export default MyComponent;
+```
+
+**How it works:**
+- Add `// @requires-asset ./path/to/file` comments at the top of your file
+- Leafstone automatically copies these assets to the `/assets/` directory
+- Reference assets in your JSX using `/assets/filename.ext` URLs
+- Supports images (PNG, JPG, SVG), fonts, and any static files
+- Assets are available both in development and static builds
+
+**Examples:**
+- `// @requires-asset ./logo.svg` - SVG logo file
+- `// @requires-asset ../images/hero.png` - PNG image from parent directory
+- `// @requires-asset ./fonts/custom.woff2` - Custom font file
+- `// @requires-asset ./data/config.json` - JSON data file
+
 ## Static Builds
 
 Ready to share your component? Build it into static files that can be deployed anywhere:
