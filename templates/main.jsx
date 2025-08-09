@@ -7,10 +7,6 @@ const root = createRoot(document.getElementById('root'));
 
 async function loadComponent() {
   try {
-    // Get component info from API
-    const response = await fetch('/api/component');
-    const { componentName, componentFile } = await response.json();
-    
     // Import and render the component
     const module = await import('@component');
     const Component = module.default;

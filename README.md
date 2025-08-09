@@ -15,11 +15,15 @@ npm install -g leafstone-react
 ### Basic Usage
 
 ```bash
-# Start server for a specific component file
+# Start dev server for a specific component file
 leafstone examples/Counter.jsx
 
-# Use custom port
+# Start dev server with custom port
 leafstone examples/Counter.jsx 3001
+
+# Build component for static deployment
+leafstone --build ./dist examples/Counter.jsx
+leafstone -b ./output examples/Chart.jsx
 ```
 
 ### Quick Start
@@ -118,6 +122,32 @@ function MyChart() {
 - `// @requires lodash` - Install latest version  
 - `// @requires d3@^7.0.0` - Popular data visualization library
 - `// @requires framer-motion@^10.0.0` - Animation library
+
+## Static Builds
+
+Ready to share your component? Build it into static files that can be deployed anywhere:
+
+```bash
+# Build to a directory
+leafstone --build ./dist examples/Chart.jsx
+```
+
+This generates optimized static files in your output directory:
+
+```
+dist/
+├── index.html                    # Production-ready HTML
+└── assets/
+    ├── index-[hash].js          # React runtime (188KB → 59KB gzipped)
+    ├── index-[hash].css         # Compiled Tailwind CSS
+    └── [ComponentName]-[hash].js # Your component + dependencies
+```
+
+**Features:**
+- ✅ **Production optimized** - Minified and tree-shaken bundles
+- ✅ **All dependencies included** - Works with any `@requires` packages
+- ✅ **Ready to deploy** - Upload to Netlify, Vercel, GitHub Pages, etc.
+- ✅ **Fast builds** - Leverages Vite's optimized bundling
 
 ## Development
 
