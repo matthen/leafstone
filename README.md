@@ -60,6 +60,7 @@ leafstone examples/Counter.jsx 3001
 - ✅ **Zero Configuration** - Just point at a JSX file
 - ✅ **Instant Development** - Component renders immediately in the browser
 - ✅ **Hot Module Replacement (HMR)** - Changes are reflected instantly
+- ✅ **Dynamic Dependencies** - Auto-install npm packages with JSDoc comments
 - ✅ **Tailwind CSS Support** - Built-in Tailwind with Dracula theme
 - ✅ **Lucide React Icons** - Icon library available for all components
 - ✅ **React DevTools Compatible** - Full React development experience
@@ -77,6 +78,46 @@ Components should:
 - **React** - Hooks, state, context, etc.
 - **Tailwind CSS** - Utility-first CSS framework with Dracula theme
 - **Lucide React** - Beautiful icon library (`import { Icon } from 'lucide-react'`)
+
+### Custom Dependencies
+
+Need to use external packages like charts, utilities, or other React libraries? Just add a JSDoc-style comment at the top of your component:
+
+```jsx
+// @requires recharts@^2.8.0
+// @requires lodash@^4.17.0
+// @requires date-fns@^2.0.0
+import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import _ from 'lodash';
+import { format } from 'date-fns';
+
+function MyChart() {
+  const data = _.range(10).map(i => ({ x: i, y: Math.random() * 100 }));
+  
+  return (
+    <div>
+      <h2>{format(new Date(), 'PPP')}</h2>
+      <LineChart width={400} height={200} data={data}>
+        <Line dataKey="y" />
+        <XAxis dataKey="x" />
+        <YAxis />
+      </LineChart>
+    </div>
+  );
+}
+```
+
+**How it works:**
+- Add `// @requires package@version` comments at the top of your file
+- Leafstone automatically detects and installs these dependencies
+- Use any npm package in your components without manual installation
+- Supports version constraints (`package@^2.0.0`) or latest (`package`)
+
+**Examples:**
+- `// @requires recharts@^2.8.0` - Install specific version
+- `// @requires lodash` - Install latest version  
+- `// @requires d3@^7.0.0` - Popular data visualization library
+- `// @requires framer-motion@^10.0.0` - Animation library
 
 ## Development
 
@@ -136,6 +177,11 @@ npm publish
 - Make sure your JSX file has a default export
 - Check the browser console for import errors
 - Verify the file path is correct
+
+**Dependency installation failing?**
+- Check your internet connection
+- Verify the package name and version exist on npm
+- Look at the console output for specific npm error messages
 
 **Hot reloading not working?**
 - The server automatically watches your component file
