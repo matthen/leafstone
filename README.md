@@ -18,11 +18,8 @@ npm install -g leafstone-react
 # Start server for a specific component file
 leafstone examples/Counter.jsx
 
-# Start server for any JSX file
-leafstone ./my-components/Button.jsx
-
 # Use custom port
-leafstone ./components/MyComponent.jsx 3001
+leafstone examples/Counter.jsx 3001
 ```
 
 ### Quick Start
@@ -115,24 +112,6 @@ Components should:
    leafstone MyComponent.jsx
    ```
 
-### Project Structure
-
-```
-leafstone-react/
-├── bin/
-│   └── leafstone.js       # CLI entry point
-├── lib/
-│   ├── index.js          # Main library exports
-│   ├── server.js         # Vite server setup
-│   └── plugin.js         # Custom Vite plugin
-├── templates/
-│   ├── index.html        # HTML template
-│   └── main.jsx          # React entry point
-├── examples/             # Example components (for testing)
-│   ├── Counter.jsx
-│   └── Button.jsx
-└── package.json          # Defines CLI binary
-```
 
 ### How It Works
 
