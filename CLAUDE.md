@@ -42,7 +42,7 @@ npm test                       # Currently returns "no test specified" error
 - **Temporary Project Setup**: Creates `.leafstone-temp-{unique}/` directory with complete Vite project
 - **Dependency Detection**: Parses `// @requires package@version` comments in JSX files
 - **Dynamic Installation**: Auto-installs npm packages using detected dependencies
-- **Asset Management**: Handles `// @requires-asset path` for static files
+- **Asset Management**: Handles `// @requires-asset path [destination]` for static files with optional custom filenames and conflict detection
 - **Component Aliasing**: Copies user's JSX component into temp project structure
 - **Hot Reloading**: Watches original component file and updates temp copy
 
@@ -51,18 +51,22 @@ npm test                       # Currently returns "no test specified" error
 
 ### Dependency System
 
-Components can declare external packages via JSDoc-style comments:
+Components can declare external packages and assets via JSDoc-style comments:
 ```jsx
 // @requires recharts@^2.8.0
 // @requires lodash@^4.17.0
 // @requires-asset ./logo.png
+// @requires-asset ./data/config.json data-config.json
+// @requires-asset ./data2/config.json data2-config.json
 ```
 
-The server automatically:
-1. Parses these comments
-2. Creates package.json with discovered dependencies
-3. Runs `npm install` in temp directory
-4. Copies assets to accessible locations
+**Package Dependencies**: The server automatically parses `@requires` comments, creates package.json with discovered dependencies, and runs `npm install` in the temp directory.
+
+**Asset Management**: 
+- `// @requires-asset path` - Copies asset using original filename
+- `// @requires-asset path destination.ext` - Copies asset with custom filename
+- Detects filename conflicts and exits with error if duplicate destinations found
+- Assets accessible via `/assets/filename` URLs in components
 
 ### Template System
 

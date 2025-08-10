@@ -130,7 +130,8 @@ Need to use images, SVGs, or other static assets in your components? Use the `@r
 ```jsx
 // @requires-asset ./logo.svg
 // @requires-asset ./background.png
-// @requires-asset ../shared/icon.svg
+// @requires-asset ../shared/icon.svg shared-icon.svg
+// @requires-asset ./data/config.json app-config.json
 import { useState } from 'react';
 
 function MyComponent() {
@@ -138,7 +139,7 @@ function MyComponent() {
     <div>
       <img src="/assets/logo.svg" alt="Logo" />
       <div style={{ backgroundImage: 'url(/assets/background.png)' }}>
-        <img src="/assets/icon.svg" alt="Icon" />
+        <img src="/assets/shared-icon.svg" alt="Icon" />
       </div>
     </div>
   );
@@ -148,17 +149,20 @@ export default MyComponent;
 ```
 
 **How it works:**
-- Add `// @requires-asset ./path/to/file` comments at the top of your file
+- Add `// @requires-asset ./path/to/file [destination]` comments at the top of your file
 - Leafstone automatically copies these assets to the `/assets/` directory
+- Optional destination filename prevents conflicts when multiple assets have the same name
 - Reference assets in your JSX using `/assets/filename.ext` URLs
 - Supports images (PNG, JPG, SVG), fonts, and any static files
 - Assets are available both in development and static builds
+- Automatic conflict detection - exits with error if multiple assets would have the same destination filename
 
 **Examples:**
-- `// @requires-asset ./logo.svg` - SVG logo file
+- `// @requires-asset ./logo.svg` - SVG logo file (uses original filename)
 - `// @requires-asset ../images/hero.png` - PNG image from parent directory
 - `// @requires-asset ./fonts/custom.woff2` - Custom font file
-- `// @requires-asset ./data/config.json` - JSON data file
+- `// @requires-asset ./data/config.json app-config.json` - JSON data with custom name
+- `// @requires-asset ./shared/config.json shared-config.json` - Avoid filename conflicts
 
 ## Static Builds
 
