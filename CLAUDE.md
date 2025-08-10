@@ -10,8 +10,7 @@ Leafstone React is a CLI tool for rapidly prototyping React components. It provi
 
 ### Development
 ```bash
-# Start development server
-npm run dev                    # Runs the dev-server with Vite config
+# Test CLI with example components
 leafstone examples/Counter.jsx # Test CLI with example component
 leafstone MyComponent.jsx 3001 # Custom port
 
@@ -101,12 +100,13 @@ Built-in styling stack:
 leafstone-react/
 ├── bin/leafstone.js           # CLI entry point
 ├── lib/
-│   ├── server.js              # Core server logic
-│   ├── plugin.js              # Vite plugin
+│   ├── server.js              # Core server orchestration
+│   ├── dependency-parser.js   # Parse @requires comments
+│   ├── asset-manager.js       # Parse and copy @requires-asset
+│   ├── temp-project.js        # Temp project setup and npm operations
 │   └── index.js               # Module exports
 ├── templates/                 # Project templates for temp directory
-├── examples/                  # Example JSX components for testing
-└── dev-server/               # Development Vite config
+└── examples/                  # Example JSX components for testing
 ```
 
 ## Development Notes
