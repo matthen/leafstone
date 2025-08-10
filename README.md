@@ -137,9 +137,9 @@ import { useState } from 'react';
 function MyComponent() {
   return (
     <div>
-      <img src="/assets/logo.svg" alt="Logo" />
-      <div style={{ backgroundImage: 'url(/assets/background.png)' }}>
-        <img src="/assets/shared-icon.svg" alt="Icon" />
+      <img src="./assets/logo.svg" alt="Logo" />
+      <div style={{ backgroundImage: 'url(./assets/background.png)' }}>
+        <img src="./assets/shared-icon.svg" alt="Icon" />
       </div>
     </div>
   );
@@ -150,9 +150,9 @@ export default MyComponent;
 
 **How it works:**
 - Add `// @requires-asset ./path/to/file [destination]` comments at the top of your file
-- Leafstone automatically copies these assets to the `/assets/` directory
+- Leafstone automatically copies these assets to the `./assets/` directory
 - Optional destination filename prevents conflicts when multiple assets have the same name
-- Reference assets in your JSX using `/assets/filename.ext` URLs
+- Reference assets in your JSX using `./assets/filename.ext` URLs
 - Supports images (PNG, JPG, SVG), fonts, and any static files
 - Assets are available both in development and static builds
 - Automatic conflict detection - exits with error if multiple assets would have the same destination filename

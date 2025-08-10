@@ -72,7 +72,7 @@ Components can declare external packages and assets via JSDoc-style comments:
 - `// @requires-asset path` - Copies asset using original filename
 - `// @requires-asset path destination.ext` - Copies asset with custom filename
 - Detects filename conflicts and exits with error if duplicate destinations found
-- Assets accessible via `/assets/filename` URLs in components
+- Assets accessible via `./assets/filename` URLs in components
 
 ### Template System
 

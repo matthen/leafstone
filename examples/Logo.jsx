@@ -21,7 +21,7 @@ function Logo() {
         <div className="flex justify-center space-x-8">
           <div className="text-center">
             <img
-              src="/assets/logo.svg"
+              src="./assets/logo.svg"
               alt="Original Logo"
               className="w-24 h-24 object-contain"
             />
@@ -29,7 +29,7 @@ function Logo() {
           </div>
           <div className="text-center">
             <img
-              src="/assets/leafstone-logo.svg"
+              src="./assets/leafstone-logo.svg"
               alt="Renamed Logo"
               className="w-24 h-24 object-contain"
             />
@@ -76,7 +76,7 @@ function Logo() {
           <li className="flex items-start gap-2">
             <span className="text-blue-400 font-bold">3.</span>
             <span>
-              Both available at <code className="text-blue-400">/assets/</code>{" "}
+              Both available at <code className="text-blue-400">./assets/</code>{" "}
               URLs
             </span>
           </li>
