@@ -45,6 +45,7 @@ npm test                       # Currently returns "no test specified" error
 - **Asset Management**: Handles `// @requires-asset path [destination]` for static files with optional custom filenames and conflict detection
 - **Component Aliasing**: Copies user's JSX component into temp project structure
 - **Hot Reloading**: Watches original component file and updates temp copy
+- **Auto-restart**: Detects changes to `@requires` and `@requires-asset` comments and automatically restarts server with new dependencies
 
 **Plugin System (`lib/plugin.js`)**
 - Minimal Vite plugin (currently empty as temp directory approach handles component resolution)
