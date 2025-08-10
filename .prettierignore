@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+var/
+logo-build/
+coverage/
+
+# Temp directories created by leafstone
+.leafstone-temp-*/
+
+# Generated files
+*.log
+*.lock
+
+# Markdown files (preserve manual formatting)
+*.md
+
+# Examples (user-generated content, don't auto-format)
+examples/

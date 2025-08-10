@@ -28,6 +28,10 @@ leafstone -b ./output Chart.jsx
 npm test                       # Run all unit tests
 npm run test:watch             # Run tests in watch mode
 npm run test:coverage          # Run tests with coverage report
+
+# Code linting and formatting
+npm run lint                   # Check code quality, style, and formatting  
+npm run lint:fix               # Auto-fix issues and format code
 ```
 
 ## Architecture
@@ -118,3 +122,11 @@ leafstone-react/
 - **Node Modules Copying**: Essential packages (react, react-dom, lucide-react) copied from main node_modules before custom dependency installation
 - **File Watching**: Uses Node.js `fs.watchFile` to monitor original component and sync changes to temp copy
 - **Permission Handling**: Explicitly sets file permissions (0o755 for dirs, 0o644 for files) to avoid issues across systems
+
+## Documentation Maintenance
+
+When making changes to the codebase, ensure documentation stays current:
+
+- **README.md**: User-facing documentation - update when adding new features, changing CLI options, or modifying user workflows
+- **CLAUDE.md**: Developer-focused documentation - update when changing architecture, adding new modules, or modifying development processes
+- **Keep in sync**: Both files should have consistent information about commands, examples, and project structure

@@ -218,7 +218,16 @@ dist/
    npm run test:coverage
    ```
 
-3. **Link for local testing**
+3. **Lint and format code**
+   ```bash
+   # Check code quality, style, and formatting
+   npm run lint
+   
+   # Auto-fix issues and format code
+   npm run lint:fix
+   ```
+
+4. **Link for local testing**
    ```bash
    npm link
    leafstone examples/Counter.jsx
@@ -226,7 +235,7 @@ dist/
    
    > **What is `npm link`?** This creates a global symlink to your local development version of the package. It's like temporarily installing your in-development package globally so you can test the `leafstone` command before publishing to npm. Think of it as "install this local package globally for testing".
 
-4. **Test the CLI locally**
+5. **Test the CLI locally**
    ```bash
    # Test with the included example component
    leafstone examples/Counter.jsx
