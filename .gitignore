@@ -1,4 +1,5 @@
 var
+coverage
 
 # Dependencies
 node_modules/

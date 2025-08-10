@@ -24,8 +24,10 @@ npm link                       # Create global symlink for testing CLI
 leafstone --build ./dist MyComponent.jsx
 leafstone -b ./output Chart.jsx
 
-# Testing (no automated tests configured)
-npm test                       # Currently returns "no test specified" error
+# Testing
+npm test                       # Run all unit tests
+npm run test:watch             # Run tests in watch mode
+npm run test:coverage          # Run tests with coverage report
 ```
 
 ## Architecture
@@ -106,7 +108,8 @@ leafstone-react/
 │   ├── temp-project.js        # Temp project setup and npm operations
 │   └── index.js               # Module exports
 ├── templates/                 # Project templates for temp directory
-└── examples/                  # Example JSX components for testing
+├── examples/                  # Example JSX components for testing
+└── tests/                     # Jest unit tests for lib modules
 ```
 
 ## Development Notes
