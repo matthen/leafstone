@@ -1,4 +1,7 @@
-# Leafstone React
+# Leafstone
+
+[![Test](https://github.com/matthen/leafstone/workflows/Test/badge.svg)](https://github.com/matthen/leafstone/workflows/Test)
+[![Lint](https://github.com/matthen/leafstone/workflows/Lint/badge.svg)](https://github.com/matthen/leafstone/workflows/Lint)
 
 A CLI tool for quickly prototyping and testing individual React components with hot reloading. Just point it at a JSX file and get an instant development server!
 
