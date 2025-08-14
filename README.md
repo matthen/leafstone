@@ -161,8 +161,6 @@ Need to use images, SVGs, or other static assets in your components? Use the `@r
 // @requires-asset ./logo.svg
 // @requires-asset ./background.png
 // @requires-asset ../shared/icon.svg shared-icon.svg
-// @requires-asset ./data/config.json app-config.json
-import { useState } from 'react';
 
 function MyComponent() {
   return (
