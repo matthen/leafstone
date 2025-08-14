@@ -16,6 +16,9 @@ npm-debug.log*
 .vscode/
 .idea/
 
+# Claude workspace
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
