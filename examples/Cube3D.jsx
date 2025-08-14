@@ -15,7 +15,7 @@ function Cube3D() {
   useEffect(() => {
     // Scene setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x282a36); // Dracula background
+    scene.background = new THREE.Color(0xffffff); // White background
     sceneRef.current = scene;
     
     // Camera setup
@@ -118,7 +118,7 @@ function Cube3D() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-600">
+    <div className="max-w-2xl mx-auto p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-600 mt-10">
       <div className="flex items-center justify-center gap-2 mb-6">
         <Zap className="text-purple-400" size={28} />
         <h2 className="text-2xl font-bold text-white">
@@ -135,8 +135,8 @@ function Cube3D() {
           onClick={() => setIsRotating(!isRotating)}
           className={`flex items-center justify-center gap-2 px-4 py-3 font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 ${
             isRotating 
-              ? 'bg-red-500 hover:bg-red-600 text-white' 
-              : 'bg-green-500 hover:bg-green-600 text-white'
+              ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+              : 'bg-gray-500 hover:bg-gray-400 text-white'
           }`}
         >
           {isRotating ? <Pause size={16} /> : <Play size={16} />}
@@ -166,7 +166,7 @@ function Cube3D() {
         
         <button 
           onClick={randomColor}
-          className="px-4 py-2 bg-pink-500 hover:bg-pink-600 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
+          className="px-4 py-2 bg-gray-600 hover:bg-gray-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
         >
           Random Color
         </button>

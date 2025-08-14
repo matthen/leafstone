@@ -19,16 +19,16 @@ function Counter() {
   return (
     <div className="max-w-md mx-auto mt-10 p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-600">
       <div className="flex items-center justify-center gap-2 mb-6">
-        <TrendingUp className="text-purple-400" size={32} />
-        <h2 className="text-3xl font-bold text-purple-400">
-          Counter: <span className="text-green-400">{count}</span>
+        <TrendingUp className="text-gray-300" size={32} />
+        <h2 className="text-3xl font-bold text-gray-200">
+          Counter: <span className="text-white">{count}</span>
         </h2>
       </div>
       
       <div className="flex gap-3 mb-6">
         <button 
           onClick={decrement}
-          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg active:scale-95"
+          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gray-600 hover:bg-gray-500 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg active:scale-95"
         >
           <Minus size={18} />
           Decrement
@@ -36,7 +36,7 @@ function Counter() {
         
         <button 
           onClick={increment}
-          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-purple-500 hover:bg-pink-500 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg active:scale-95"
+          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg active:scale-95"
         >
           <Plus size={18} />
           Increment
