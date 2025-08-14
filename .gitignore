@@ -1,5 +1,6 @@
 var
 coverage
+*~lock~
 
 # Dependencies
 node_modules/
@@ -21,6 +22,7 @@ npm-debug.log*
 
 # NPM package files
 *.tgz
+
 
 # OS
 .DS_Store

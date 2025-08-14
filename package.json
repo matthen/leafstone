@@ -9,7 +9,8 @@
   "files": [
     "bin/",
     "lib/",
-    "templates/"
+    "templates/",
+    "assets/"
   ],
   "scripts": {
     "test": "jest",

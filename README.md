@@ -1,4 +1,8 @@
-# Leafstone
+# leafstone
+
+<p align="center">
+  <img src="assets/logo.svg" alt="leafstone icon" width="100">
+</p>
 
 [![Test](https://github.com/matthen/leafstone/workflows/Test/badge.svg)](https://github.com/matthen/leafstone/workflows/Test)
 [![Lint](https://github.com/matthen/leafstone/workflows/Lint/badge.svg)](https://github.com/matthen/leafstone/workflows/Lint)
