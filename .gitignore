@@ -19,6 +19,9 @@ npm-debug.log*
 # Claude workspace
 .claude/
 
+# NPM package files
+*.tgz
+
 # OS
 .DS_Store
 Thumbs.db

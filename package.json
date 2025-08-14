@@ -1,7 +1,7 @@
 {
-  "name": "leafstone-react",
-  "version": "1.0.0",
-  "description": "A development server for quickly prototyping and testing React components",
+  "name": "leafstone",
+  "version": "0.1.0",
+  "description": "Easily run single file React components - just `leafstone Component.jsx` with zero setup",
   "main": "lib/index.js",
   "bin": {
     "leafstone": "bin/leafstone.js"
