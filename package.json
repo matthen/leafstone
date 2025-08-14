@@ -1,6 +1,6 @@
 {
   "name": "leafstone",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "description": "Easily run single file React components - just `leafstone Component.jsx` with zero setup",
   "main": "lib/index.js",
   "bin": {
