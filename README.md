@@ -1,7 +1,7 @@
 # leafstone
 
 <p align="center">
-  <img src="assets/logo.svg" alt="leafstone icon" width="100">
+  <img src="https://raw.githubusercontent.com/matthen/leafstone/main/assets/logo.svg" alt="leafstone icon" width="100">
 </p>
 
 [![Test](https://github.com/matthen/leafstone/workflows/Test/badge.svg)](https://github.com/matthen/leafstone/workflows/Test)
