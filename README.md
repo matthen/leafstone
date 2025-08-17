@@ -159,14 +159,22 @@ Need to use images, SVGs, or other static assets in your components? Use the `@r
 
 ```jsx
 // @requires-asset ./logo.svg
-// @requires-asset ./background.png
+// @requires-asset ./chart-data.json
 // @requires-asset ../shared/icon.svg shared-icon.svg
+import { useState } from 'react';
+import { BarChart } from 'lucide-react';
+import data from './assets/chart-data.json';
 
 function MyComponent() {
+  const [selectedItem, setSelectedItem] = useState(data[0]);
+  
   return (
     <div>
       <img src="./assets/logo.svg" alt="Logo" />
-      <div style={{ backgroundImage: 'url(./assets/background.png)' }}>
+      <div className="p-4">
+        <BarChart className="text-blue-500" />
+        <h3>{selectedItem.title}</h3>
+        <p>Value: {selectedItem.value}</p>
         <img src="./assets/shared-icon.svg" alt="Icon" />
       </div>
     </div>
